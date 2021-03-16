@@ -121,6 +121,20 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (request, response) => {
     return response.json(statement);
 })
 
+//Listar Saldo da Conta
+app.get('/balance', verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;
+
+    const balance = getBalance(customer.statement);
+
+    return response.json(balance)
+
+})
+
+//Atualizar Conta
+
+
+//Deletar Conta
 
 
 
